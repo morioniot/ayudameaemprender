@@ -1,0 +1,102 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    align-items: center;
+    background-color: brown;
+    display: flex;
+    font-family: 'Overpass Mono', monospace;
+    height: 68px;
+    justify-content: space-between;
+}
+
+header #logo {
+    color: #ccc;
+    font-size: 22px;;
+    font-weight: bold;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav ul {
+    /*background-color: cadetblue;*/
+    color: #ccc;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px;
+}
+
+section h3 {
+    color: #555;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#main_image {
+    background-color: #666;
+    position: relative;
+}
+
+#main_image img {
+    height: auto;
+    width: 100%;
+}
+
+#main_image h2 {
+    bottom: 30px;
+    color: white;
+    left: 30px;
+    position: absolute;
+    font-size: 48px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#experience_section {
+    background-color: white;
+    font-family: 'Overpass Mono', monospace;
+}
+
+#experience_section #logos_container {
+    /*background-color: cornflowerblue;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px auto;
+    width: 80%;
+}
+
+#experience_section figure {
+    width: 25%;
+    font-size: 0px;
+}
+
+#experience_section figure img {
+    height: auto;
+    width: 100%;
+}
+
+#briefcase_section {
+    background-color: white;
+    font-family: 'Overpass Mono', monospace;
+}
+
+#briefcase_section #briefcase_container {
+    margin: 30px auto;
+    width: 80%;
+}
+
+#scraping_section {
+    background-color: #333;
+}
+
+#contact_section {
+    background-color: #666;
+}
