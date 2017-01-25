@@ -93,6 +93,13 @@ section h3 {
     width: 80%;
 }
 
+#briefcase_section #briefcase_container figure {
+    background-color: darkslategray;
+    height: 400px;
+    margin: 0 auto;
+    width: 80%;
+}
+
 #scraping_section {
     background-color: #333;
 }
