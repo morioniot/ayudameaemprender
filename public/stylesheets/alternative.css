@@ -11,48 +11,34 @@ section h3 {
     margin-left: 30px;
 }
 
-/**************************************************************************
-********** Navigation Bar ************
-**************************************************************************/
-
 nav {
     color: white;
     display: flex;
     background-color: #232323;
+    padding: 0px 10px;
     position: fixed;
-    right: 60px;
+    right: 50px;
     top: 80px;
     z-index: 2;
 }
 
 nav ul {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-weight: bold;
     list-style: none;
     text-align: center;
 }
 
 nav ul li {
     cursor: pointer;
-    padding: 32px 10px;
+    padding: 32px 5px;
 }
 
 nav ul li:hover {
     opacity: 0.6;
 }
 
-nav ul li.selected {
-    background-color: #22A39F;
-}
-
-/**************************************************************************
-********** Page Presentation ************
-**************************************************************************/
-
 #main_image {
-    align-items: center;
-    background-color: #22A39F;
-    display: flex;
+    background-color: #ffb900;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -60,30 +46,7 @@ nav ul li.selected {
     top: 0px;
 }
 
-#main_image .container {
-    /*background-color: darkgoldenrod;*/
-    font-family: 'Open Sans', sans-serif;
-    margin: 0px auto;
-    text-align: center;
-}
 
-#main_image .container h1 {
-    color: white;
-    font-size: 63px;
-    font-weight: bold;
-}
-
-#main_image .container hr {
-    border-top: solid 1px rgba(255, 255, 255, 0.4);
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-#main_image .container p {
-    color: white;
-    font-size: 28px;
-    font-weight: 300;
-}
 
 #main_image h2 {
     bottom: 30px;
