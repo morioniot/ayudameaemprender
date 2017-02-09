@@ -4,13 +4,6 @@
     padding: 0;
 }
 
-section h3 {
-    color: #555;
-    font-size: 22px;
-    margin-top: 20px;
-    margin-left: 30px;
-}
-
 /**************************************************************************
 ********** Navigation Bar ************
 **************************************************************************/
@@ -85,42 +78,127 @@ nav ul li.selected {
     font-weight: 300;
 }
 
-#main_image h2 {
-    bottom: 30px;
-    color: white;
-    left: 30px;
+/**************************************************************************
+********** Page Wrapper ************
+**************************************************************************/
+
+#page_wrapper {
     position: absolute;
-    font-size: 48px;
-    font-family: 'Open Sans Condensed', sans-serif;
+    top: 100%;
 }
 
-#experience_section {
+/**************************************************************************
+********** Skills Section ************
+**************************************************************************/
+
+#skills_section {
+    /*background-color: #AAA;*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+#skills_section .container {
+    align-items: center;
     background-color: white;
-    font-family: 'Overpass Mono', monospace;
-}
-
-#experience_section #logos_container {
-    /*background-color: cornflowerblue;*/
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px auto;
+    flex-direction: column;
+    margin: 0px auto;
+    padding-top: 20px;
     width: 80%;
 }
 
-#experience_section figure {
-    width: 25%;
-    font-size: 0px;
+#skills_section .container h2 {
+    color: #22A39F;
+    font-size: 54px;
+    font-weight: 300;
+    margin: 20px 0px;
 }
 
-#experience_section figure img {
-    height: auto;
-    width: 100%;
+#skills_section .quotation_container {
+    color: #727878;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
 }
 
+#skills_section .skills_set {
+    margin-top: 40px;
+    width: 75%;
+}
+
+#skills_section .skills_set h3 {
+    color: #22A39F;
+    font-size: 28px;
+    font-weight: 300;
+    margin: 25px 0px;
+}
+
+#skills_section .qualifications_container {
+    /*background-color: pink;*/
+    color: #434242;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    font-weight: 300;
+    justify-content: space-between;
+}
+
+#skills_section .qualification {
+    /*background-color: lightblue;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0px;
+    width: 45%;
+}
+
+#skills_section .count {
+    cursor: default;
+    display: flex;
+    font-weight: normal;
+    text-align: center;
+}
+
+#skills_section .count:hover .point{
+    font-size: 19px;
+    transition-duration: 200ms;
+    width: 17px;
+}
+
+#skills_section .point {
+    color: #22A39F;
+    font-size: 18px;
+    width: 16px;
+}
+
+#skills_section .point.inactive {
+    color: #727878;
+}
+
+/**************************************************************************
+********** Allocate Mission Button ************
+**************************************************************************/
+
+.hireus {
+    background-color: #22A39F;
+    border: 1px solid #1c8784;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 30px;
+    padding: 6px 12px;
+}
+
+.hireus:hover {
+    background-color: #1c8784;
+}
+
+/*************************************************************************/
 #briefcase_section {
     background-color: white;
-    font-family: 'Overpass Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #briefcase_section #briefcase_container {
