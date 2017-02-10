@@ -89,7 +89,7 @@ nav ul li.selected {
 
 section section .container {
     align-items: center;
-    background-color: white;
+    background-color: inherit;
     display: flex;
     flex-direction: column;
     margin: 0px auto;
@@ -218,7 +218,7 @@ section section .quotation_container {
 }
 
 #projects_section article {
-    /*background-color: pink;*/
+    background-color: white;
     border: 1px solid rgba(67,66,66,0.2);
     box-shadow: 4px 4px 10px rgba(67,66,66,0.3);
     margin-top: 40px;
