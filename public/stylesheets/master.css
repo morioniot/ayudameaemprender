@@ -303,37 +303,69 @@ article .work_description span {
     color: #434242;
 }
 
+/**************************************************************************
+********** Contact Section ************
+**************************************************************************/
+
+#contact_section {
+    background-color: #434242;
+}
+
+#contact_section h2 {
+    color: white;
+}
+
+#contact_section #contact_container {
+    border-bottom: 1px solid rgba(114, 120, 120, 0.2);
+    border-top: 1px solid rgba(114, 120, 120, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 120px;
+    padding: 40px 0px;
+    width: 80%;
+}
+
+#contact_container .contact_link {
+    align-items: center;
+    color: #B3B3B3;
+    cursor: default;
+    display: flex;
+    font-size: 28px;
+    font-weight: 300;
+    text-decoration: none;
+    width: 50%;
+}
+
+#contact_container .contact_link:hover {
+    color: white;
+}
+
+#contact_container .contact_link span {
+    border-radius: 5px;
+    height: 32px;
+    margin-right: 20px;
+    width: 32px;
+}
+
+#contact_container .whatsapp span{
+    background-image: url('/public/images/whatsapp1.png');
+    background-position: 0px 0px;
+}
+
+#contact_container .whatsapp:hover span{
+    background-position: 0px 32px;
+}
+
+#contact_container .email span{
+    background-image: url('/public/images/arroba1.png');
+    background-position: 0px 0px;
+}
+
+#contact_container .email:hover span{
+    background-position: 0px 32px;
+}
 
 
 
 /*************************************************************************/
-
-
-#scraping_section {
-    background-color: white;
-    font-family: 'Overpass Mono', monospace;
-}
-
-#scraping_section #scraping_info_container {
-    display: flex;
-    margin: 30px auto;
-    max-width: 1110px;
-    width: 95%;
-}
-
-#scraping_section h4 {
-    color: darkgoldenrod;
-}
-
-#scraping_section p {
-    margin: 20px 0px;
-}
-
-#scraping_section #scraping_info_container div {
-    width: 50%;
-    margin: 20px 30px;
-}
-
-#contact_section {
-    background-color: #666;
-}
