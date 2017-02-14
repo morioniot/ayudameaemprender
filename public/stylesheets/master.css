@@ -212,6 +212,7 @@ section section .quotation_container {
 #projects_section #projects_presentation {
     background-color: #f3efe0;
     margin-top: 20px;
+    margin-bottom: 40px;
     width: 85%;
 }
 
@@ -313,6 +314,7 @@ article .work_description span {
 
 #contact_section {
     background-color: #434242;
+    padding: 80px 0px;
 }
 
 #contact_section h2 {
@@ -369,7 +371,3 @@ article .work_description span {
 #contact_container .email:hover span{
     background-position: 0px 32px;
 }
-
-
-
-/*************************************************************************/

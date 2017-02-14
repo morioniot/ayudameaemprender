@@ -1,4 +1,4 @@
-var NavigationBarControlFactory = function() {
+var NavigationBarControlFactory = function( scrollManager ) {
 
     var navFixedPositionState = false;
     var body = document.body || document.documentElement;
@@ -20,6 +20,35 @@ var NavigationBarControlFactory = function() {
         skills: false,
         projects: false,
         contact: false
+    };
+
+    var initialize = function( scrollManager ) {
+        var skillsSectionStart = sectionHeights.mainImageHeight;
+        var projectsSectionStart = skillsSectionStart + sectionHeights.skillsSectionHeight;
+        var contactSectionStart = projectsSectionStart + sectionHeights.projectsSectionHeight;
+        Object.keys( navItemsState ).forEach(function( itemName ) {
+
+            var scrollPosition;
+            switch (itemName) {
+                case 'skills':
+                    scrollPosition = skillsSectionStart + 10;
+                    break;
+                case 'projects':
+                    scrollPosition = projectsSectionStart + 10;
+                    break;
+                case 'contact':
+                    scrollPosition = contactSectionStart + 10;
+                    break;
+                default:
+                    break;
+            }
+
+            var navigateTo = function() {
+                scrollManager.scrollLinearTo(scrollPosition, 600);
+            };
+
+            navigationElements[ itemName ].onclick = navigateTo;
+        });
     };
 
     var changePosition = function() {
@@ -72,17 +101,46 @@ var NavigationBarControlFactory = function() {
             turnOnNavItem('contact');
     };
 
+    initialize( scrollManager );
     return {
         changePosition: changePosition,
         selectNavItem: selectNavItem
     };
-}
+};
 
-var navigationManager = NavigationBarControlFactory();
+var ScrollControlFactory = function() {
+
+    var body = document.body || document.documentElement;
+
+    var scrollLinearTo = function( scrollPosition, time ) {
+        var currentPosition = body.scrollTop;
+        var pixelsBetween = Math.abs(currentPosition - scrollPosition);
+        var direction = (currentPosition < scrollPosition)? 1 : -1;
+        var absoluteScrollStep = Math.round(pixelsBetween / (time / 20));
+        var scrollStep = absoluteScrollStep * direction;
+        var lastScrollStep = (pixelsBetween % absoluteScrollStep) * direction;
+        var stepsCount = Math.floor(pixelsBetween / absoluteScrollStep);
+        var scrollInterval = setInterval(function() {
+            if(stepsCount > 0) {
+                window.scrollBy(0, scrollStep);
+                stepsCount -= 1;
+            }
+            else{
+                window.scrollBy(0, lastScrollStep);
+                clearInterval( scrollInterval );
+            }
+        }, 20);
+    };
+
+    return {
+        scrollLinearTo: scrollLinearTo
+    };
+};
+
+var scrollManager = ScrollControlFactory();
+var navigationManager = NavigationBarControlFactory( scrollManager );
 
 window.onscroll = function() {
     navigationManager.changePosition();
     navigationManager.selectNavItem();
 };
-
-console.log("Entrando a la consola");
