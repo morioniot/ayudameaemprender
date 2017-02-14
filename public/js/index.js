@@ -4,7 +4,10 @@ var NavigationBarControlFactory = function() {
     var body = document.body || document.documentElement;
 
     var navigationElements = {
-        navigationBar: document.getElementById('navigation_bar')
+        navigationBar: document.getElementById('navigation_bar'),
+        skills: document.getElementById('skills_item'),
+        projects: document.getElementById('projects_item'),
+        contact: document.getElementById('contact_item')
     }
 
     var sectionHeights = {
@@ -36,15 +39,50 @@ var NavigationBarControlFactory = function() {
         }
     };
 
+    var turnOnNavItem = function( itemName ) {
+        if(!navItemsState[ itemName ]) {
+            navItemsState[ itemName ] = true;
+            navigationElements[ itemName ].classList.add('selected');
+        }
+    };
+
+    var turnOffNavItem = function( itemName ) {
+        if(navItemsState[ itemName ]) {
+            navItemsState[ itemName ] = false;
+            navigationElements[ itemName ].classList.remove('selected');
+        }
+    };
+
+    var turnOffAllItems = function() {
+        turnOffNavItem('projects');
+        turnOffNavItem('skills');
+        turnOffNavItem('contact');
+    };
+
+    var selectNavItem = function() {
+        var skillsSectionStart = sectionHeights.mainImageHeight;
+        var projectsSectionStart = skillsSectionStart + sectionHeights.skillsSectionHeight;
+        var contactSectionStart = projectsSectionStart + sectionHeights.projectsSectionHeight;
+        turnOffAllItems();
+        if(body.scrollTop >= skillsSectionStart && body.scrollTop < projectsSectionStart)
+            turnOnNavItem('skills');
+        else if(body.scrollTop >= projectsSectionStart && body.scrollTop < contactSectionStart)
+            turnOnNavItem('projects');
+        else if(body.scrollTop >= contactSectionStart)
+            turnOnNavItem('contact');
+    };
+
     return {
-        changePosition: changePosition
+        changePosition: changePosition,
+        selectNavItem: selectNavItem
     };
 }
 
-var body = document.body || document.documentElement;
 var navigationManager = NavigationBarControlFactory();
 
-body.onscroll = function(){
+window.onscroll = function() {
     navigationManager.changePosition();
+    navigationManager.selectNavItem();
 };
+
 console.log("Entrando a la consola");
